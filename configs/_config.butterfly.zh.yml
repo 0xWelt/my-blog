@@ -27,7 +27,9 @@ menu:
     分类: /categories/ || fas fa-folder-open
     标签: /tags/ || fas fa-tags
     归档: /archives/ || fas fa-archive
-
+  语言||fas fa-language:
+    English: javascript:switchLanguage('en') || fas fa-e
+    中文: javascript:switchLanguage('zh') || fas fa-c
 
 # --------------------------------------
 # Code Blocks Settings
@@ -1073,8 +1075,9 @@ inject:
     - '<style>.social-icon:hover i.iconfont { transform: rotate(360deg) !important; transition: transform 0.6s ease !important; } .social-icon i.iconfont { display: inline-block; font-size: 1em; vertical-align: baseline; line-height: 1; }</style>'
     # 小红书
     - <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5110392_eniexo423qp.css">
+    # 语言切换脚本（放在 head 中，确保函数在菜单渲染前可用）
+    - <script src="/js/language-switcher.js"></script>
   bottom:
-    # - <script src="xxxx"></script>
 
 # CDN Settings
 # Don't modify the following settings unless you know how they work

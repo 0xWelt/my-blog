@@ -1,5 +1,6 @@
 ---
 title: 功能测试
+date: 2026-01-13 12:00:00
 categories:
   - tech
 tags:
