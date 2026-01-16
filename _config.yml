@@ -105,8 +105,5 @@ theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: git@github.com:0xWelt/my-blog.git
-  # example, https://github.com/hexojs/hexojs.github.io
-  branch: gh-pages
+## Note: Deployment is now handled by GitHub Actions (see .github/workflows/pages.yml)
+## The old hexo deploy command is no longer used.
