@@ -8,7 +8,10 @@
     "server": "sh -c './scripts/server.sh \"$@\"' --",
     "test": "node --test test/*.test.js",
     "blog-proxy:dev": "cd blog-proxy && wrangler dev",
-    "blog-proxy:deploy": "cd blog-proxy && wrangler deploy"
+    "blog-proxy:deploy": "cd blog-proxy && wrangler deploy",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "prepare": "husky"
   },
   "hexo": {
     "version": "8.1.1"
@@ -30,6 +33,14 @@
     "hexo-wordcount": "^6.0.1"
   },
   "devDependencies": {
+    "eslint": "^8.57.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
     "wrangler": "^4.59.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix"
+    ]
   }
 }

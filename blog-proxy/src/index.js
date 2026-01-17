@@ -28,4 +28,4 @@ export default {
       return new Response(`Upstream error: ${error.message}`, { status: 502 });
     }
   }
-}
+};
