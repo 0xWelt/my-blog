@@ -4,14 +4,8 @@
   "private": true,
   "scripts": {
     "clean": "hexo clean",
-    "build": "npm run build:zh",
-    "build:zh": "./hexo-with-symlinks.sh zh && hexo generate",
-    "build:en": "./hexo-with-symlinks.sh en && hexo generate",
-    "build:ja": "./hexo-with-symlinks.sh ja && hexo generate",
-    "server": "npm run server:zh",
-    "server:zh": "./hexo-with-symlinks.sh zh && hexo server",
-    "server:en": "./hexo-with-symlinks.sh en && hexo server",
-    "server:ja": "./hexo-with-symlinks.sh ja && hexo server",
+    "build": "sh -c './scripts/build.sh \"$@\"' --",
+    "server": "sh -c './scripts/server.sh \"$@\"' --",
     "test": "node --test test/*.test.js",
     "blog-proxy:dev": "cd blog-proxy && wrangler dev",
     "blog-proxy:deploy": "cd blog-proxy && wrangler deploy"
@@ -36,6 +30,6 @@
     "hexo-wordcount": "^6.0.1"
   },
   "devDependencies": {
-    "wrangler": "^3.0.0"
+    "wrangler": "^4.59.2"
   }
 }

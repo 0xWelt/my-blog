@@ -1,12 +1,17 @@
 #!/bin/bash
 
 # Hexo symlink management script
-# Usage: ./hexo-with-symlinks.sh [lang|cleanup]
+# Usage: ./scripts/hexo-with-symlinks.sh [lang|cleanup]
 # lang: zh (default), en, or ja - creates symlinks for the specified language
 # cleanup: removes all symlinks
 # This script only manages symlinks, does not run hexo commands
 
 set -e  # Exit on error
+
+# Ensure we're in the project root directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+cd "$PROJECT_ROOT"
 
 ACTION=${1:-zh}  # Default to zh if not specified
 

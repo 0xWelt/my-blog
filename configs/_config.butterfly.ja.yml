@@ -31,6 +31,11 @@ menu:
     中文: javascript:switchLanguage('zh') || fas fa-c
     English: javascript:switchLanguage('en') || fas fa-e
     日本語: javascript:switchLanguage('ja') || fas fa-j
+    한국어: javascript:switchLanguage('ko') || fas fa-k
+    العربية: javascript:switchLanguage('ar') || fas fa-a
+    Italiano: javascript:switchLanguage('it') || fas fa-i
+    Deutsch: javascript:switchLanguage('de') || fas fa-d
+    Français: javascript:switchLanguage('fr') || fas fa-f
 
 
 # --------------------------------------
@@ -177,7 +182,7 @@ subtitle:
   source: false
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub:
-    - Code is cheap, show me the talk.
+    - コードは安い、話を見せてくれ。
 
 # Article layout on the homepage
 # 1: Cover on the left, info on the right
@@ -262,8 +267,8 @@ noticeOutdate:
   limit_day: 365
   # Position: top / bottom
   position: top
-  message_prev: It has been
-  message_next: days since the last update, the content of the article may be outdated.
+  message_prev: 最後の更新から
+  message_next: 日が経過しました。記事の内容が古くなっている可能性があります。
 
 # --------------------------------------
 # Footer Settings
@@ -306,8 +311,8 @@ aside:
   card_announcement:
     enable: true
     content:
-      Why should we have met before? We share the same roots;
-      Welcome to my blog
+      会うために知り合う必要はない、私たちは同じ根から生まれた；
+      私のブログへようこそ
   card_recent_post:
     enable: true
     # If set 0 will show all

@@ -22,12 +22,12 @@ menu:
   # List||fas fa-list:
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
-  Home: / || fas fa-home
-  Pages||fas fa-list:
-    Categories: /categories/ || fas fa-folder-open
-    Tags: /tags/ || fas fa-tags
-    Archives: /archives/ || fas fa-archive
-  Language||fas fa-language:
+  홈: / || fas fa-home
+  페이지||fas fa-list:
+    카테고리: /categories/ || fas fa-folder-open
+    태그: /tags/ || fas fa-tags
+    아카이브: /archives/ || fas fa-archive
+  언어||fas fa-language:
     中文: javascript:switchLanguage('zh') || fas fa-c
     English: javascript:switchLanguage('en') || fas fa-e
     日本語: javascript:switchLanguage('ja') || fas fa-j
@@ -182,7 +182,7 @@ subtitle:
   source: false
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub:
-    - Code is cheap, show me the talk.
+    - 코드는 싸다, 대화를 보여줘.
 
 # Article layout on the homepage
 # 1: Cover on the left, info on the right
@@ -267,8 +267,8 @@ noticeOutdate:
   limit_day: 365
   # Position: top / bottom
   position: top
-  message_prev: It has been
-  message_next: days since the last update, the content of the article may be outdated.
+  message_prev: 마지막 업데이트로부터
+  message_next: 일이 지났습니다. 기사 내용이 오래되었을 수 있습니다.
 
 # --------------------------------------
 # Footer Settings
@@ -311,8 +311,8 @@ aside:
   card_announcement:
     enable: true
     content:
-      Why should we have met before? We share the same roots;
-      Welcome to my blog
+      만나기 위해 미리 알 필요는 없으니, 우리는 같은 뿌리에서 태어났으니；
+      내 블로그에 오신 것을 환영합니다
   card_recent_post:
     enable: true
     # If set 0 will show all
@@ -1072,7 +1072,7 @@ inject:
     - <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5110392_eniexo423qp.css">
     # Language switcher script (in head to ensure function is available before menu renders)
     # Use type="module" to support ES modules
-    - <script type="module" src="/en/js/language-switcher.js"></script>
+    - <script type="module" src="/ko/js/language-switcher.js"></script>
   bottom:
 
 # CDN Settings

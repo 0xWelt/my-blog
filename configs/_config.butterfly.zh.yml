@@ -31,6 +31,11 @@ menu:
     中文: javascript:switchLanguage('zh') || fas fa-c
     English: javascript:switchLanguage('en') || fas fa-e
     日本語: javascript:switchLanguage('ja') || fas fa-j
+    한국어: javascript:switchLanguage('ko') || fas fa-k
+    العربية: javascript:switchLanguage('ar') || fas fa-a
+    Italiano: javascript:switchLanguage('it') || fas fa-i
+    Deutsch: javascript:switchLanguage('de') || fas fa-d
+    Français: javascript:switchLanguage('fr') || fas fa-f
 
 # --------------------------------------
 # Code Blocks Settings

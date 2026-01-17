@@ -4,7 +4,7 @@
  */
 
 // 支持的语言代码列表（用于匹配和移除语言前缀）
-const supportedLanguageCodes = ['en', 'ja', 'zh'];
+const supportedLanguageCodes = ['en', 'ja', 'ko', 'ar', 'it', 'de', 'fr', 'zh'];
 
 // 基础 URL
 const baseUrl = 'https://blog.0xwelt.com';

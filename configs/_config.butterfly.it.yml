@@ -23,11 +23,11 @@ menu:
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
   Home: / || fas fa-home
-  Pages||fas fa-list:
-    Categories: /categories/ || fas fa-folder-open
-    Tags: /tags/ || fas fa-tags
-    Archives: /archives/ || fas fa-archive
-  Language||fas fa-language:
+  Pagine||fas fa-list:
+    Categorie: /categories/ || fas fa-folder-open
+    Tag: /tags/ || fas fa-tags
+    Archivi: /archives/ || fas fa-archive
+  Lingua||fas fa-language:
     中文: javascript:switchLanguage('zh') || fas fa-c
     English: javascript:switchLanguage('en') || fas fa-e
     日本語: javascript:switchLanguage('ja') || fas fa-j
@@ -182,7 +182,7 @@ subtitle:
   source: false
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub:
-    - Code is cheap, show me the talk.
+    - Il codice è economico, mostrami la conversazione.
 
 # Article layout on the homepage
 # 1: Cover on the left, info on the right
@@ -267,8 +267,8 @@ noticeOutdate:
   limit_day: 365
   # Position: top / bottom
   position: top
-  message_prev: It has been
-  message_next: days since the last update, the content of the article may be outdated.
+  message_prev: Sono passati
+  message_next: giorni dall'ultimo aggiornamento, il contenuto dell'articolo potrebbe essere obsoleto.
 
 # --------------------------------------
 # Footer Settings
@@ -311,8 +311,8 @@ aside:
   card_announcement:
     enable: true
     content:
-      Why should we have met before? We share the same roots;
-      Welcome to my blog
+      Perché dovremmo esserci già conosciuti? Condividiamo le stesse radici；
+      Benvenuto nel mio blog
   card_recent_post:
     enable: true
     # If set 0 will show all
@@ -1072,7 +1072,7 @@ inject:
     - <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5110392_eniexo423qp.css">
     # Language switcher script (in head to ensure function is available before menu renders)
     # Use type="module" to support ES modules
-    - <script type="module" src="/en/js/language-switcher.js"></script>
+    - <script type="module" src="/it/js/language-switcher.js"></script>
   bottom:
 
 # CDN Settings

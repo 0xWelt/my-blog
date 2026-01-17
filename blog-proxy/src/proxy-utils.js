@@ -7,9 +7,11 @@
 const supportedLanguages = {
   'en': 'blog-en.0xwelt.com',
   'ja': 'blog-ja.0xwelt.com',
-  // 未来可以添加更多语言，例如：
-  // 'fr': 'blog-fr.0xwelt.com',
-  // 'de': 'blog-de.0xwelt.com',
+  'ko': 'blog-ko.0xwelt.com',
+  'ar': 'blog-ar.0xwelt.com',
+  'it': 'blog-it.0xwelt.com',
+  'de': 'blog-de.0xwelt.com',
+  'fr': 'blog-fr.0xwelt.com',
 };
 
 // 默认语言（中文）
