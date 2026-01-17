@@ -39,6 +39,26 @@ Butterflyドキュメントの[アイコン](https://butterfly.js.org/posts/4073
 
 ## i18n国際化
 
-AIネイティブブログとして、複数言語をサポートする予定です。現在、日本語のみサポートされています。
+AIネイティブブログとして、複数言語をサポートする予定です。現在、中国語と英語をサポートしています。
 
-- [x] 完了
+### アーキテクチャ設計
+
+多言語サポートを実現するため、**複数のCloudflare Pages + 1つのCloudflare Workerプロキシ**のアーキテクチャを採用しました：
+
+1. **多言語Cloudflare Pages**：各言語を独立したCloudflare Pageとしてデプロイ
+   - 中国語：`blog-zh.0xwelt.com`（デフォルト言語、プレフィックスなしのパス）
+   - その他の言語：`blog-{lang}.0xwelt.com`（`/{lang}/`プレフィックス付きのパス）
+
+2. **Cloudflare Workerプロキシ（blog-proxy）**：パスに基づいて対応する言語サイトにルーティングする統一エントリーポイント
+   - メインドメイン：`blog.0xwelt.com`
+   - ルーティングルール：
+     - `blog.0xwelt.com/xxx` → `blog-zh.0xwelt.com/xxx`にプロキシ（中国語、デフォルト）
+     - `blog.0xwelt.com/{lang}/xxx` → `blog-{lang}.0xwelt.com/{lang}/xxx`にプロキシ（その他の言語）
+
+3. **Hexo設定**：各言語が独立した設定ファイルを使用
+   - 中国語：`root: /`（プレフィックスなし、ルートパス）
+   - その他の言語：`root: /{lang}/`（言語プレフィックス付き）
+
+### 言語切替
+
+フロントエンドJavaScript（`source/js/language-switcher.js`）を通じてクライアントサイドの言語切替を実装しています。すべての切替は統一ドメイン`blog.0xwelt.com`を通じて行われ、URLの一貫性を維持します。

@@ -41,4 +41,24 @@ Butterfly 主题的详细信息可参考 [Butterfly 官方文档](https://butter
 
 作为 AI native 的博客，我计划支持多语言，目前已支持中文和英文。
 
-- [x] 已完成
+### 架构设计
+
+为了实现多语言支持，我采用了**多个 Cloudflare Pages + 一个 Cloudflare Worker 代理**的架构：
+
+1. **多语言 Cloudflare Pages**：每种语言部署一个独立的 Cloudflare Page
+   - 中文：`blog-zh.0xwelt.com`（默认语言，路径不带前缀）
+   - 其他语言：`blog-{lang}.0xwelt.com`（路径带 `/{lang}/` 前缀）
+
+2. **Cloudflare Worker 代理（blog-proxy）**：统一入口，根据路径路由到对应的语言站点
+   - 主域名：`blog.0xwelt.com`
+   - 路由规则：
+     - `blog.0xwelt.com/xxx` → 代理到 `blog-zh.0xwelt.com/xxx`（中文，默认）
+     - `blog.0xwelt.com/{lang}/xxx` → 代理到 `blog-{lang}.0xwelt.com/{lang}/xxx`（其他语言）
+
+3. **Hexo 配置**：每种语言使用独立的配置文件
+   - 中文：`root: /`（无前缀，根路径）
+   - 其他语言：`root: /{lang}/`（带语言前缀）
+
+### 语言切换
+
+通过前端 JavaScript（`source/js/language-switcher.js`）实现客户端语言切换，所有切换都通过 `blog.0xwelt.com` 统一域名完成，保持 URL 的一致性。

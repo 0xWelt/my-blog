@@ -28,8 +28,8 @@ menu:
     标签: /tags/ || fas fa-tags
     归档: /archives/ || fas fa-archive
   语言||fas fa-language:
-    English: javascript:switchLanguage('en') || fas fa-e
     中文: javascript:switchLanguage('zh') || fas fa-c
+    English: javascript:switchLanguage('en') || fas fa-e
     日本語: javascript:switchLanguage('ja') || fas fa-j
 
 # --------------------------------------

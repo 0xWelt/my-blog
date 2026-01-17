@@ -39,6 +39,26 @@ Referencing Butterfly documentation's [icon](https://butterfly.js.org/posts/4073
 
 ## i18n Internationalization
 
-As an AI-native blog, I plan to support multiple languages. Currently, only English is supported.
+As an AI-native blog, I plan to support multiple languages. Currently, Chinese and English are supported.
 
-- [x] Completed
+### Architecture Design
+
+To achieve multi-language support, I adopted an architecture of **multiple Cloudflare Pages + one Cloudflare Worker proxy**:
+
+1. **Multi-language Cloudflare Pages**: Each language is deployed as an independent Cloudflare Page
+   - Chinese: `blog-zh.0xwelt.com` (default language, paths without prefix)
+   - Other languages: `blog-{lang}.0xwelt.com` (paths with `/{lang}/` prefix)
+
+2. **Cloudflare Worker Proxy (blog-proxy)**: Unified entry point that routes to corresponding language sites based on paths
+   - Main domain: `blog.0xwelt.com`
+   - Routing rules:
+     - `blog.0xwelt.com/xxx` → proxy to `blog-zh.0xwelt.com/xxx` (Chinese, default)
+     - `blog.0xwelt.com/{lang}/xxx` → proxy to `blog-{lang}.0xwelt.com/{lang}/xxx` (other languages)
+
+3. **Hexo Configuration**: Each language uses an independent configuration file
+   - Chinese: `root: /` (no prefix, root path)
+   - Other languages: `root: /{lang}/` (with language prefix)
+
+### Language Switching
+
+Client-side language switching is implemented through frontend JavaScript (`source/js/language-switcher.js`). All switching is done through the unified domain `blog.0xwelt.com` to maintain URL consistency.
