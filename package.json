@@ -9,7 +9,8 @@
     "build:en": "./hexo-with-symlinks.sh en && hexo generate",
     "server": "npm run server:zh",
     "server:zh": "./hexo-with-symlinks.sh zh && hexo server",
-    "server:en": "./hexo-with-symlinks.sh en && hexo server"
+    "server:en": "./hexo-with-symlinks.sh en && hexo server",
+    "test": "node --test test/language-switcher.test.js"
   },
   "hexo": {
     "version": "8.1.1"

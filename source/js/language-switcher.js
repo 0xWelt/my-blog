@@ -6,32 +6,33 @@
   window.switchLanguage = function(targetLang) {
     console.log('switchLanguage called with:', targetLang);
     const currentPath = window.location.pathname;
+    const baseUrl = 'https://blog.0xwelt.com';
     let newPath;
 
     if (targetLang === 'zh') {
-      // 切换到中文
-      if (currentPath === '/en' || currentPath.startsWith('/en/')) {
-        // 当前在英文页面，需要移除 /en 前缀（3个字符）
-        // /en -> /, /en/ -> /, /en/something -> /something
-        newPath = currentPath.substring(3);
-        window.location.href = newPath || '/';
-      } else {
-        console.log('Already on the Chinese page.');
+      // 切换到中文：从 blog.0xwelt.com/{lang}/xxx 切换到 blog.0xwelt.com/xxx
+      // 移除语言前缀（如 /en/, /zh/ 等）
+      newPath = currentPath.replace(/^\/(en|zh)\//, '/').replace(/^\/(en|zh)$/, '/');
+      if (newPath === '') {
+        newPath = '/';
       }
-    } else if (targetLang === 'en') {
-      // 切换到英文
-      if (currentPath === '/en' || currentPath.startsWith('/en/')) {
-        // 已经在英文页面
-        console.log('Already on the English page.');
-      } else {
-        // 当前在中文页面，需要添加 /en/ 前缀
-        if (currentPath === '/') {
-          newPath = '/en/';
-        } else {
-          newPath = '/en' + currentPath;
-        }
-        window.location.href = newPath;
+      console.log('Switching to Chinese, redirecting to:', baseUrl + newPath);
+      window.location.href = baseUrl + newPath;
+    } else {
+      // 切换到其他语言：从 blog.0xwelt.com/{optional lang}/xxx 切换到 blog.0xwelt.com/{lang}/xxx
+      // 先移除现有的语言前缀
+      let pathWithoutLang = currentPath.replace(/^\/(en|zh)\//, '/').replace(/^\/(en|zh)$/, '/');
+      if (pathWithoutLang === '') {
+        pathWithoutLang = '/';
       }
+      // 添加目标语言前缀
+      if (pathWithoutLang === '/') {
+        newPath = '/' + targetLang + '/';
+      } else {
+        newPath = '/' + targetLang + pathWithoutLang;
+      }
+      console.log('Switching to', targetLang + ', redirecting to:', baseUrl + newPath);
+      window.location.href = baseUrl + newPath;
     }
   };
   
