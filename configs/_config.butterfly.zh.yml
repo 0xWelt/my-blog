@@ -30,6 +30,7 @@ menu:
   语言||fas fa-language:
     English: javascript:switchLanguage('en') || fas fa-e
     中文: javascript:switchLanguage('zh') || fas fa-c
+    日本語: javascript:switchLanguage('ja') || fas fa-j
 
 # --------------------------------------
 # Code Blocks Settings
@@ -1076,7 +1077,8 @@ inject:
     # 小红书
     - <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5110392_eniexo423qp.css">
     # 语言切换脚本（放在 head 中，确保函数在菜单渲染前可用）
-    - <script src="/js/language-switcher.js"></script>
+    # 使用 type="module" 以支持 ES modules
+    - <script type="module" src="/js/language-switcher.js"></script>
   bottom:
 
 # CDN Settings

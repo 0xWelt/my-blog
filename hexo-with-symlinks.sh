@@ -2,7 +2,7 @@
 
 # Hexo symlink management script
 # Usage: ./hexo-with-symlinks.sh [lang|cleanup]
-# lang: zh (default) or en - creates symlinks for the specified language
+# lang: zh (default), en, or ja - creates symlinks for the specified language
 # cleanup: removes all symlinks
 # This script only manages symlinks, does not run hexo commands
 

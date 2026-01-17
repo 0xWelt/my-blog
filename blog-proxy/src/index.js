@@ -1,18 +1,11 @@
+import { getProxyTargetUrl } from './proxy-utils.js';
+
 export default {
   async fetch(request) {
     const url = new URL(request.url);
     
-    let targetUrl = null;
-
-    // 情况1：/en/ 路径 → 英文博客
-    if (url.pathname.startsWith('/en/')) {
-      const newPath = url.pathname.slice(3); // 移除 /en
-      targetUrl = `https://blog-en.0xwelt.com${newPath}${url.search}`;
-    } 
-    // 情况2：其他路径（包括根路径/）→ 默认中文博客
-    else {
-      targetUrl = `https://blog-zh.0xwelt.com${url.pathname}${url.search}`;
-    }
+    // 使用核心逻辑获取目标 URL
+    const targetUrl = getProxyTargetUrl(url.pathname, url.search);
 
     // 发起内部代理请求
     try {

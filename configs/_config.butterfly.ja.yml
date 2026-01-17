@@ -22,12 +22,12 @@ menu:
   # List||fas fa-list:
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
-  Home: / || fas fa-home
-  Pages||fas fa-list:
-    Categories: /categories/ || fas fa-folder-open
-    Tags: /tags/ || fas fa-tags
-    Archives: /archives/ || fas fa-archive
-  Language||fas fa-language:
+  ホーム: / || fas fa-home
+  ページ||fas fa-list:
+    カテゴリー: /categories/ || fas fa-folder-open
+    タグ: /tags/ || fas fa-tags
+    アーカイブ: /archives/ || fas fa-archive
+  言語||fas fa-language:
     English: javascript:switchLanguage('en') || fas fa-e
     中文: javascript:switchLanguage('zh') || fas fa-c
     日本語: javascript:switchLanguage('ja') || fas fa-j
@@ -1067,7 +1067,7 @@ inject:
     - <link rel="stylesheet" href="//at.alicdn.com/t/c/font_5110392_eniexo423qp.css">
     # Language switcher script (in head to ensure function is available before menu renders)
     # Use type="module" to support ES modules
-    - <script type="module" src="/en/js/language-switcher.js"></script>
+    - <script type="module" src="/ja/js/language-switcher.js"></script>
   bottom:
 
 # CDN Settings
