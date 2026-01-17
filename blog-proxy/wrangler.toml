@@ -1,0 +1,13 @@
+name = "blog-proxy"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# 路由配置 - 匹配 blog.0xwelt.com 的所有请求
+routes = [
+  { pattern = "blog.0xwelt.com/*", zone_name = "0xwelt.com" }
+]
+
+# 如果需要自定义域名，取消下面的注释并配置
+# routes = [
+#   { pattern = "blog.0xwelt.com/*", custom_domain = true }
+# ]
