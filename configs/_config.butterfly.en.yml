@@ -29,7 +29,7 @@ menu:
     Archives: /archives/ || fas fa-archive
   Language||fas fa-language:
     English: javascript:switchLanguage('en') || fas fa-e
-    Chinese: javascript:switchLanguage('zh') || fas fa-c
+    中文: javascript:switchLanguage('zh') || fas fa-c
 
 
 # --------------------------------------
