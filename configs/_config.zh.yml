@@ -94,16 +94,13 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
-include:
-exclude:
+include: []
+exclude: []
 ignore:
+  - source-en/
+
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: butterfly
-
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-## Note: Deployment is now handled by Cloudflare Pages
-## The old hexo deploy command is no longer used.

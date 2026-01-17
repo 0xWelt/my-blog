@@ -6,3 +6,8 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
+
+# Symlinks created by build scripts
+_config.yml
+_config.butterfly.yml
+source/_posts

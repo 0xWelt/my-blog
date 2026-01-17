@@ -3,9 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
     "clean": "hexo clean",
-    "server": "hexo server"
+    "build": "npm run build:zh",
+    "build:zh": "./hexo-with-symlinks.sh zh && hexo generate",
+    "build:en": "./hexo-with-symlinks.sh en && hexo generate",
+    "server": "npm run server:zh",
+    "server:zh": "./hexo-with-symlinks.sh zh && hexo server",
+    "server:en": "./hexo-with-symlinks.sh en && hexo server"
   },
   "hexo": {
     "version": "8.1.1"

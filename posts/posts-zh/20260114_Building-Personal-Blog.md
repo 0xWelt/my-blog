@@ -1,5 +1,6 @@
 ---
 title: 搭建个人博客
+date: 2026-01-14 12:00:00
 categories:
   - tech
 tags:
@@ -38,6 +39,6 @@ Butterfly 主题的详细信息可参考 [Butterfly 官方文档](https://butter
 
 ## i18n 国际化
 
-作为 AI native 的博客，我计划支持多语言，目前只支持中文。
+作为 AI native 的博客，我计划支持多语言，目前已支持中文和英文。
 
-- [ ] 待完成
+- [x] 已完成
