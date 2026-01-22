@@ -36,7 +36,7 @@
     "eslint": "^8.57.1",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
-    "wrangler": "^4.59.2"
+    "wrangler": "^4.60.0"
   },
   "lint-staged": {
     "*.{js,jsx}": [
