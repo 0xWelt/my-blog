@@ -21,6 +21,12 @@ print("Hello, World!")
 
 ## 图片
 
+### 本地
+
 | ![博客封面](/img/default_top_img.png) | ![博客背景](/img/background.jpg) | ![文章封面](/img/default_cover.jpg) |
 |:---:|:---:|:---:|
 | 博客封面 | 博客背景 | 文章封面 |
+
+### 图床
+
+![图床测试图](https://0xwelt-public-images.oss-cn-shanghai.aliyuncs.com/images/9S.jpg)

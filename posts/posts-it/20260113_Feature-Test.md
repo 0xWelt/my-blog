@@ -21,6 +21,12 @@ print("Hello, World!")
 
 ## Immagini
 
+### Locale
+
 | ![Copertina del blog](/img/default_top_img.png) | ![Sfondo del blog](/img/background.jpg) | ![Copertina dell'articolo](/img/default_cover.jpg) |
 |:---:|:---:|:---:|
 | Copertina del blog | Sfondo del blog | Copertina dell'articolo |
+
+### Hosting immagini
+
+![Test hosting immagini](https://0xwelt-public-images.oss-cn-shanghai.aliyuncs.com/images/9S.jpg)
