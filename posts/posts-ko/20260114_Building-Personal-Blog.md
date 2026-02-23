@@ -62,3 +62,7 @@ AI native 블로그로서 다국어 지원을 계획했으며, 현재는 중국�
 ### 언어 전환
 
 프론트엔드 JavaScript(`source/js/language-switcher.js`)를 통해 클라이언트 측 언어 전환을 구현했으며, 모든 전환은 `blog.0xwelt.com` 통합 도메인을 통해 완료되어 URL의 일관성을 유지합니다.
+
+## 이미지 호스팅: 알리云 OSS + PicGo
+
+블로그에 이미지를 넣기 위해 이미지를 저장하고 외부 링크를 만들 이미지 호스팅을 사용합니다. [Kimi](https://www.kimi.com/share/19c8b1ea-3db2-8970-8000-0000a0d0e185) 가이드를 참고해 알리云 OSS 리소스 팩을 구매했고, **[PicGo](https://github.com/Molunerfinn/PicGo)** 데스크톱 클라이언트로 업로드합니다. 설정은 위 Kimi 가이드대로 진행했고 한 번에 성공했습니다.

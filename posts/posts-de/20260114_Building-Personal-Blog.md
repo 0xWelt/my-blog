@@ -62,3 +62,7 @@ Um mehrsprachige Unterstützung zu realisieren, habe ich eine Architektur aus **
 ### Sprachumschaltung
 
 Ich habe die clientseitige Sprachumschaltung über Frontend-JavaScript (`source/js/language-switcher.js`) implementiert, und alle Umschaltungen werden über die einheitliche Domain `blog.0xwelt.com` durchgeführt, um die Konsistenz der URL zu gewährleisten.
+
+## Bildhosting: Aliyun OSS + PicGo
+
+Beim Schreiben von Blogbeiträgen muss ich Bilder einbinden; dafür nutze ich einen Bildhoster zum Speichern und Erzeugen externer Links. Nach [Kimis](https://www.kimi.com/share/19c8b1ea-3db2-8970-8000-0000a0d0e185) Anleitung habe ich ein Aliyun-OSS-Ressourcenpaket für die Speicherung gekauft und verwende den **[PicGo](https://github.com/Molunerfinn/PicGo)**-Desktopclient für Uploads. Die gesamte Konfiguration habe ich anhand der Kimi-Anleitung übernommen – beim ersten Versuch erfolgreich.

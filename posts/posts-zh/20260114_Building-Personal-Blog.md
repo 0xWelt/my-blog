@@ -62,3 +62,7 @@ Butterfly 主题的详细信息可参考 [Butterfly 官方文档](https://butter
 ### 语言切换
 
 通过前端 JavaScript（`source/js/language-switcher.js`）实现客户端语言切换，所有切换都通过 `blog.0xwelt.com` 统一域名完成，保持 URL 的一致性。
+
+## 图床：阿里云 OSS + PicGo
+
+写博客时需要插入图片，我选择用图床存储图片并生成外链。在参考 [Kimi](https://www.kimi.com/share/19c8b1ea-3db2-8970-8000-0000a0d0e185) 的建议后，购买了阿里云 OSS 资源包做云存储，并配合 **[PicGo](https://github.com/Molunerfinn/PicGo)** 桌面客户端做上传。整个配置流程全部照抄上面的 kimi 攻略，一次成功。

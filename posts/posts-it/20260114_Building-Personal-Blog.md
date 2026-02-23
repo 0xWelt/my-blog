@@ -62,3 +62,7 @@ Per realizzare il supporto multilingue, ho adottato un'architettura di **più Cl
 ### Cambio lingua
 
 Ho implementato il cambio lingua lato client attraverso JavaScript frontend (`source/js/language-switcher.js`), e tutti i cambiamenti vengono completati attraverso il dominio unificato `blog.0xwelt.com` per mantenere la coerenza dell'URL.
+
+## Hosting immagini: Aliyun OSS + PicGo
+
+Per inserire immagini negli articoli uso un servizio di hosting per salvarle e generare link esterni. Seguendo la [guida Kimi](https://www.kimi.com/share/19c8b1ea-3db2-8970-8000-0000a0d0e185), ho acquistato un pacchetto risorse Aliyun OSS per lo storage e uso il client desktop **[PicGo](https://github.com/Molunerfinn/PicGo)** per il caricamento. Ho seguito la guida Kimi passo passo e la configurazione è andata a buon fine al primo tentativo.

@@ -62,3 +62,7 @@ To achieve multi-language support, I adopted an architecture of **multiple Cloud
 ### Language Switching
 
 Client-side language switching is implemented through frontend JavaScript (`source/js/language-switcher.js`). All switching is done through the unified domain `blog.0xwelt.com` to maintain URL consistency.
+
+## Image Hosting: Aliyun OSS + PicGo
+
+When writing blog posts I need to insert images, so I use an image host to store them and generate external links. After following [Kimi](https://www.kimi.com/share/19c8b1ea-3db2-8970-8000-0000a0d0e185)'s guide, I purchased an Aliyun OSS resource pack for storage and use the **[PicGo](https://github.com/Molunerfinn/PicGo)** desktop client for uploads. I followed the Kimi guide step by step and got it working on the first try.
