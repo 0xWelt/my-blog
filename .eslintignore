@@ -1,7 +1,0 @@
-node_modules/
-dist/
-public/
-.deploy_git/
-*.config.js
-*.config.ts
-package-lock.json
