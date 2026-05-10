@@ -1,6 +1,7 @@
 ---
 title: 当 RL 黑话入侵生活，我重新理解了决策的本质
 date: 2026-03-01 17:32:00
+cover: https://0xwelt-public-images.oss-cn-shanghai.aliyuncs.com/images/default_cover.jpg
 categories:
   - tech
 tags:

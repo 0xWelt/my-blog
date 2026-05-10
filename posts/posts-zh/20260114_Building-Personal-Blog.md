@@ -1,6 +1,7 @@
 ---
 title: 搭建个人博客
 date: 2026-01-14 12:00:00
+cover: https://0xwelt-public-images.oss-cn-shanghai.aliyuncs.com/images/default_cover.jpg
 categories:
   - tech
 tags:

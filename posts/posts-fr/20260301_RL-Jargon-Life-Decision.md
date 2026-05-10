@@ -1,6 +1,7 @@
 ---
 title: Quand le jargon du RL envahit la vie, je redécouvre l'essence de la décision
 date: 2026-03-01 17:32:00
+cover: https://0xwelt-public-images.oss-cn-shanghai.aliyuncs.com/images/default_cover.jpg
 categories:
   - tech
 tags:

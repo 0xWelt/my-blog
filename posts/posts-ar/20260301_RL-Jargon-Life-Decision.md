@@ -1,6 +1,7 @@
 ---
 title: عندما غزت مصطلحات RL حياتي، أعدتُ اكتشاف جوهر اتخاذ القرار
 date: 2026-03-01 17:32:00
+cover: https://0xwelt-public-images.oss-cn-shanghai.aliyuncs.com/images/default_cover.jpg
 categories:
   - tech
 tags:

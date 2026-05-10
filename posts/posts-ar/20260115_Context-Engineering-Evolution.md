@@ -1,6 +1,7 @@
 ---
 title: الفصل التالي للنظام البيئي - عندما يصبح السياق (Context) الرمز التطوري للذكاء الاصطناعي العام AGI
 date: 2026-01-15 00:00:00
+cover: https://pic1.zhimg.com/v2-f71be8249d714baa2ee5ccaab20ae8ba_r.jpg
 categories:
   - tech
 tags:

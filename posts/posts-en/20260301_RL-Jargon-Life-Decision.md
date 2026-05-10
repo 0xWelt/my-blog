@@ -1,6 +1,7 @@
 ---
 title: When RL Jargon Invades Life, I Re-examine the Essence of Decision-Making
 date: 2026-03-01 17:32:00
+cover: https://0xwelt-public-images.oss-cn-shanghai.aliyuncs.com/images/default_cover.jpg
 categories:
   - tech
 tags:

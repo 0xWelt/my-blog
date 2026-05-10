@@ -1,6 +1,7 @@
 ---
 title: 功能测试
 date: 2026-01-13 12:00:00
+cover: https://0xwelt-public-images.oss-cn-shanghai.aliyuncs.com/images/9S.jpg
 categories:
   - tech
 tags:

@@ -1,6 +1,7 @@
 ---
 title: RL 은어가 일상에 침투했을 때, 나는 의사결정의 본질을 새로 이해했다
 date: 2026-03-01 17:32:00
+cover: https://0xwelt-public-images.oss-cn-shanghai.aliyuncs.com/images/default_cover.jpg
 categories:
   - tech
 tags:

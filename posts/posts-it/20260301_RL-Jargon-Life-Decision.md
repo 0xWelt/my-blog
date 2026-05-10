@@ -1,6 +1,7 @@
 ---
 title: Quando il gergo dell'RL invade la vita, ho riscoperto l'essenza delle decisioni
 date: 2026-03-01 17:32:00
+cover: https://0xwelt-public-images.oss-cn-shanghai.aliyuncs.com/images/default_cover.jpg
 categories:
   - tech
 tags:
