@@ -97,6 +97,31 @@ cf workers routes list -z 0xwelt.com
 
 日常部署**无需任何 CLI**：git push 触发 Pages 自动构建。wrangler 作为 my-blog 的 devDependency 保留。
 
+## cf CLI 未覆盖时 → 回退原生 API（curl + Bearer token）
+
+cf 是 technical preview，部分**管理类操作没有命令或参数不全**（本次整合已验证）。此时直接用 Cloudflare 原生 API：
+
+```bash
+export CLOUDFLARE_API_TOKEN='cfut_...'
+export CLOUDFLARE_ACCOUNT_ID='bd45de5571a7c2900fab29f2152e16ec'
+AUTH="Authorization: Bearer $CLOUDFLARE_API_TOKEN"
+API="https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID"
+
+# 删除 Worker 脚本（cf 无此命令）
+curl -s -X DELETE "$API/workers/scripts/blog-proxy" -H "$AUTH"
+
+# 删除 Pages 自定义域名（必须先于项目删除！）
+curl -s -X DELETE "$API/pages/projects/blog/domains/blog.0xwelt.com" -H "$AUTH"
+
+# 删除 Pages 项目（⚠️ 前置：项目上所有自定义域名必须先删，否则报 8000028）
+curl -s -X DELETE "$API/pages/projects/blog" -H "$AUTH"
+```
+
+**要点**：
+- 响应统一为 `{"success": bool, "errors": [...]}`，用 `python3 -c "import json,sys; ..."` 解析
+- **删除 Pages 项目依赖顺序**：先删全部自定义域名 → 再删项目（错误码 8000028 提示此约束）
+- 需要的权限：token 里 pages:write / workers:write 等（已配置）
+
 ## 踩坑记录
 
 1. **WSL 下 OAuth 回调失效**：`cf auth login` 打印的浏览器授权链接重定向到 `localhost:8877`，但该端口在 WSL 侧从不监听（浏览器显示成功但 cf 收不到 code）。→ 一律用 API Token。
