@@ -11,3 +11,6 @@ _multiconfig.yml
 _config.yml
 _config.butterfly.yml
 source/_posts
+
+# Merged multi-language build output
+public-all/

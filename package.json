@@ -5,6 +5,7 @@
   "scripts": {
     "clean": "hexo clean",
     "build": "sh -c './scripts/build.sh \"$@\"' --",
+    "build:all": "bash ./scripts/build-all.sh",
     "server": "sh -c './scripts/server.sh \"$@\"' --",
     "test": "node --test test/*.test.js",
     "blog-proxy:dev": "cd blog-proxy && wrangler dev",
