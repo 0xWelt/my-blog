@@ -42,6 +42,20 @@ Mit Bezug auf den Abschnitt [icon](https://butterfly.js.org/posts/4073eda/) in d
 
 Als AI-native-Blog habe ich mehrsprachige Unterstützung geplant und unterstütze derzeit Chinesisch und Englisch.
 
+### Architektur-Entwicklung (Update 2026-08)
+
+Im August 2026 habe ich die Bereitstellungsarchitektur einmalig optimiert und konsolidiert: Die Mehrsprachigkeit wurde von 2 auf 8 Sprachen erweitert (Chinesisch, Englisch, Japanisch, Koreanisch, Arabisch, Französisch, Deutsch, Italienisch), und die Bereitstellung wurde von „mehreren Pages + Worker-Proxy“ auf „ein einzelnes Pages-Projekt“ vereinfacht:
+
+1. **Architektur-Konsolidierung**: Der blog-proxy Worker-Proxy und die 8 nach Sprache aufgeteilten Pages-Projekte wurden aufgegeben und durch ein einzelnes Pages-Projekt (blog) ersetzt, in dem alle Sprachen in einem Projekt zusammengeführt sind
+   - Hauptdomain `blog.0xwelt.com` → CNAME → `blog-5up.pages.dev`
+   - Chinesisch: `/` (ohne Präfix); andere Sprachen: `/{lang}/` (mit Präfix)
+
+2. **Kombinierter Build (build-all)**: `scripts/build-all.sh` führt den Hexo-Build pro Sprache aus (jede Sprache verwendet weiterhin eine eigene Konfigurationsdatei), und die Ergebnisse werden in `public-all/` zusammengeführt (Chinesisch im Root-Verzeichnis, andere Sprachen im Unterverzeichnis `/<lang>/`)
+
+3. **Vereinfachte Bereitstellung**: Ein Push zu GitHub main löst den automatischen Build und die Bereitstellung über Pages aus – keine Proxy-Ebene, kein manuelles Deployment erforderlich
+
+Die Sprachumschaltungslogik bleibt unverändert und wird weiterhin über Frontend-JavaScript unter der einheitlichen Domain `blog.0xwelt.com` durchgeführt.
+
 ### Architektur-Design
 
 Um mehrsprachige Unterstützung zu realisieren, habe ich eine Architektur aus **mehreren Cloudflare Pages + einem Cloudflare Worker-Proxy** übernommen:

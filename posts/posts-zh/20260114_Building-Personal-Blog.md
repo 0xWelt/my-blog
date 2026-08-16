@@ -42,6 +42,20 @@ Butterfly 主题的详细信息可参考 [Butterfly 官方文档](https://butter
 
 作为 AI native 的博客，我计划支持多语言，目前已支持中文和英文。
 
+### 架构演进（2026-08 更新）
+
+2026-08 我对部署架构做了一次整合优化：多语言从 2 种扩展到 8 种（中文、英文、日文、韩文、阿拉伯文、法文、德文、意大利文），部署方式从「多个 Pages + Worker 代理」简化为「单个 Pages 项目」：
+
+1. **架构整合**：废弃了 blog-proxy Worker 代理和 8 个按语言拆分的 Pages 项目，改为单个 Pages 项目（blog），所有语言合并在一个项目里
+   - 主域名 `blog.0xwelt.com` → CNAME → `blog-5up.pages.dev`
+   - 中文：`/`（无前缀）；其他语言：`/{lang}/`（带前缀）
+
+2. **合并构建（build-all）**：`scripts/build-all.sh` 逐个语言执行 Hexo 构建（每种语言仍使用独立的配置文件），产物合并到 `public-all/`（中文在根目录，其他语言在 `/<lang>/` 子目录）
+
+3. **部署方式简化**：push 到 GitHub main 即触发 Pages 自动构建部署，无代理层、无需手动部署
+
+语言切换逻辑不变，仍通过前端 JavaScript 在 `blog.0xwelt.com` 统一域名下完成。
+
 ### 架构设计
 
 为了实现多语言支持，我采用了**多个 Cloudflare Pages + 一个 Cloudflare Worker 代理**的架构：
