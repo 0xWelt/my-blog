@@ -42,7 +42,7 @@ blog.0xwelt.com → CNAME → blog-5up.pages.dev（Pages 项目 blog，唯一 DN
   ├── /ja/ /ko/ /ar/ /fr/ /de/ /it/ → 各语言子目录
 ```
 
-- **构建**：`npm run build:all` → `scripts/build-all.sh`，逐个语言 symlink + hexo generate 后合并到 `public-all/`（zh 在根，其余在 `/<lang>/`）
+- **构建**：`npm run build:all` → `bin/build-all.sh`，逐个语言 symlink + hexo generate 后合并到 `public-all/`（zh 在根，其余在 `/<lang>/`）
 - **部署**：push 到 GitHub main 触发 Pages 自动构建（build_command: `npm run build:all`，destination: `public-all`）
 - **语言切换**：前端 `language-switcher.js` 纯路径变换（`blog.0xwelt.com/{lang}/xxx`），无需任何后端逻辑
 - 旧架构（8 个 Pages 项目 + blog-proxy Worker 反代）已于 2026-08 清理退役
@@ -128,14 +128,14 @@ curl -s -X DELETE "$API/pages/projects/blog" -H "$AUTH"
 2. **DNS 403**：token 缺 `Zone → DNS → Edit` 权限时，`cf dns records list` 报 `[10000] Authentication error 403`。→ 在 dash.cloudflare.com/profile/api-tokens 补权限。
 3. **cf create/delete 参数坑**：DNS create 只认 `--body` JSON；delete 必须 `--force`；pages project create 必须传 `--production-branch`，否则报 required。
 4. **Pages 自定义域名切换**：先删旧 DNS 记录再建 CNAME，然后删 Worker 路由，新域名验证是异步的（状态 pending→active，几分钟），期间可能 522，等验证完成即可。
-5. **构建脚本必须用 bash**：`scripts/build.sh`/build-all.sh 用了 `${BASH_SOURCE[0]}`，本地 `sh`（dash）会报 Bad substitution；Pages 构建环境 sh=bash 所以线上正常。
+5. **构建脚本必须用 bash**：`bin/build.sh`/build-all.sh 用了 `${BASH_SOURCE[0]}`，本地 `sh`（dash）会报 Bad substitution；Pages 构建环境 sh=bash 所以线上正常。
 
 ## 完整工作流示例：新增一种语言（无需新建 Pages 项目！）
 
 ```bash
 # 1. 新增 configs/_config.xx.yml + configs/_config.butterfly.xx.yml（root: /xx/）
 # 2. 新建 posts/posts-xx/ 目录放该语言文章
-# 3. 在 scripts/build-all.sh 的 LANGS 变量加 xx
+# 3. 在 bin/build-all.sh 的 LANGS 变量加 xx
 # 4. git push → Pages 自动构建部署，新语言在 https://blog.0xwelt.com/xx/
 ```
 
