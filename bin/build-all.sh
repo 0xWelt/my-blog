@@ -15,6 +15,15 @@ LANGS="zh en ja ko ar fr de it"
 OUT="$PROJECT_ROOT/public-all"
 HEXO="$PROJECT_ROOT/node_modules/.bin/hexo"
 
+# Fail fast on unsupported Node.js (see .nvmrc / package.json engines) so the
+# Cloudflare Pages build can never silently run on an older runtime.
+echo "==> Node.js $(node -v)"
+NODE_MAJOR="$(node -p 'process.versions.node.split(".")[0]')"
+if [ "$NODE_MAJOR" -lt 22 ]; then
+  echo "Node.js >= 22 is required, found $(node -v)" >&2
+  exit 1
+fi
+
 echo "==> Cleaning previous output: $OUT"
 rm -rf "$OUT"
 mkdir -p "$OUT"

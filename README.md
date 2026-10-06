@@ -10,7 +10,7 @@ Hexo 8 多语言博客，8 种语言（zh/en/ja/ko/ar/fr/de/it）合并在**单�
   - `/` → 中文（默认语言，无前缀）
   - `/{lang}/` → 其他 7 种语言
   - 无 Worker、无代理层（旧架构 blog-proxy + 8 个 Pages 项目已退役）
-- **合并构建**：`npm run build:all` → `scripts/build-all.sh`
+- **合并构建**：`npm run build:all` → `bin/build-all.sh`
   - 逐个语言切换 config symlink + `hexo generate`，产物合并到 `public-all/`（zh 在根，其余在 `/<lang>/`）
   - 新增语言：加 `configs/_config.xx.yml` + `posts/posts-xx/`，再把 xx 加进 build-all.sh 的 `LANGS` 即可，**无需新建 Pages 项目**
 - **部署**：push 到 GitHub `main` → Pages 自动构建（build command: `npm run build:all`，destination: `public-all`），无需手动部署

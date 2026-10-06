@@ -7,6 +7,7 @@ export default defineConfig([
     'node_modules/',
     'dist/',
     'public/',
+    'public-all/',
     '.deploy_git/',
     '*.config.js',
     '*.config.ts',

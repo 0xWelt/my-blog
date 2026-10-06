@@ -2,11 +2,14 @@
   "name": "hexo-site",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "clean": "hexo clean",
-    "build": "sh -c './scripts/build.sh \"$@\"' --",
-    "build:all": "bash ./scripts/build-all.sh",
-    "server": "sh -c './scripts/server.sh \"$@\"' --",
+    "build": "sh -c './bin/build.sh \"$@\"' --",
+    "build:all": "bash ./bin/build-all.sh",
+    "server": "sh -c './bin/server.sh \"$@\"' --",
     "test": "node --test test/*.test.js",
     "blog-proxy:dev": "cd blog-proxy && wrangler dev",
     "blog-proxy:deploy": "cd blog-proxy && wrangler deploy",
@@ -15,7 +18,7 @@
     "prepare": "husky"
   },
   "hexo": {
-    "version": "8.1.1"
+    "version": "8.1.2"
   },
   "dependencies": {
     "hexo": "^8.1.2",
