@@ -38,7 +38,7 @@
     "eslint": "^10.4.0",
     "globals": "^17.6.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
+    "lint-staged": "^17.0.5",
     "wrangler": "^4.93.1"
   },
   "lint-staged": {
