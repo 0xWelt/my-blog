@@ -19,8 +19,8 @@ HEXO="$PROJECT_ROOT/node_modules/.bin/hexo"
 # Cloudflare Pages build can never silently run on an older runtime.
 echo "==> Node.js $(node -v)"
 NODE_MAJOR="$(node -p 'process.versions.node.split(".")[0]')"
-if [ "$NODE_MAJOR" -lt 22 ]; then
-  echo "Node.js >= 22 is required, found $(node -v)" >&2
+if [ "$NODE_MAJOR" -lt 24 ]; then
+  echo "Node.js >= 24 is required, found $(node -v)" >&2
   exit 1
 fi
 

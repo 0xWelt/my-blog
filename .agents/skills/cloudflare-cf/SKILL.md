@@ -9,7 +9,7 @@ Cloudflare 官方统一 CLI，覆盖全部产品（~3000 个 API 操作），专
 
 ## 安装与认证
 
-- 已全局安装：`cf v0.6.0`（路径 `~/.nvm/versions/node/v24.13.0/bin/cf`，需 Node.js 22+）
+- 已全局安装：`cf v0.6.0`（路径 `~/.nvm/versions/node/v24.13.0/bin/cf`，需 Node.js 24+）
 - **认证用 API Token**（`CLOUDFLARE_API_TOKEN` 环境变量），已写入 `~/.zshrc` 和 `~/.bashrc`
 - ⚠️ **不要用 `cf auth login` 浏览器 OAuth**：WSL 下回调端口 8877 无法监听，流程会卡死
 - 常用环境变量（避免每条命令重复传参）：
