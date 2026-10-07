@@ -14,3 +14,6 @@ source/_posts
 
 # Merged multi-language build output
 public-all/
+
+# Local git worktrees
+.worktrees/
