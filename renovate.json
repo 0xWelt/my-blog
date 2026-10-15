@@ -1,6 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
+  "extends": [
+    "config:recommended"
+  ],
   "rebaseWhen": "behind-base-branch",
   "automerge": true,
   "automergeType": "pr",
@@ -12,15 +14,30 @@
   },
   "packageRules": [
     {
-      "description": "Group patch and minor updates together",
-      "matchUpdateTypes": ["minor", "patch"],
+      "description": "Group patch and minor updates together (exclude Node.js runtime pin)",
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchDatasources": [
+        "!node-version"
+      ],
       "groupName": "dependencies (minor and patch)",
       "groupSlug": "dependencies-minor-patch",
       "automerge": true
     },
     {
       "description": "Never automerge major updates",
-      "matchUpdateTypes": ["major"],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "automerge": false
+    },
+    {
+      "description": "Do not automerge Node.js version (.nvmrc); Cloudflare Pages asdf may lag behind releases",
+      "matchDatasources": [
+        "node-version"
+      ],
       "automerge": false
     }
   ]
