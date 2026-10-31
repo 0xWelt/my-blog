@@ -14,7 +14,7 @@ Hexo 8 多语言博客，8 种语言（zh/en/ja/ko/ar/fr/de/it）合并在**单�
   - 逐个语言切换 config symlink + `hexo generate`，产物合并到 `public-all/`（zh 在根，其余在 `/<lang>/`）
   - 新增语言：加 `configs/_config.xx.yml` + `posts/posts-xx/`，再把 xx 加进 build-all.sh 的 `LANGS` 即可，**无需新建 Pages 项目**
 - **部署**：push 到 GitHub `main` → Pages 自动构建（build command: `npm run build:all`，destination: `public-all`），无需手动部署
-- 基础设施管理用 cf CLI，详见 `my-blog/.agents/skills/cloudflare-cf/SKILL.md`
+- 基础设施：博客专属拓扑/账号见 `.agents/skills/cloudflare-cf/SKILL.md`；通用 Cloudflare CLI/API 见 skill `cloudflare-cli`（welt-skills）
 
 - **Hexo 配置**：
   - 中文版：`root: /`（根路径，无语言前缀）
